@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="../dist/multiselector.js"></script>
+    <style>
+        ul li {
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            margin: 10px;
+            list-style: none;
+        }
+        ul {
+            clear: both;
+        }
+        li {
+            float: left;
+        }
+        .ms-selected {
+            /*color: blue;*/
+            background-color: #0000ff;
+        }
+    </style>
+</head>
+<body>
+<h1>jQuery MultiSelector Plugin example</h1>
+<p>Look the source code and check the console to understand how the plugin works. More informations here: <a href="https://github.com/luckyseven/jquery-multiselector">https://github.com/luckyseven/jquery-multiselector</a></p>
+<br>
+<ul id="test1">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+    $(document).ready(function()
+    {
+        $("#test1, #test2").multiSelector({
+            selector:'li',
+            onSelectionEnd: function(list, parent, element) //Callback
+            {
+                console.log("First parameter: object list");
+                console.log(list);
+
+                console.log("Second parameter: parent object");
+                console.log(parent);
+
+                console.log("Third parameter: clicked object");
+                console.log(element);
+            }
+        });
+    });
+</script>
+</body>
+</html>
