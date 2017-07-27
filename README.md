@@ -90,17 +90,16 @@ Option name			| Type				| Default		| Description
 `disableSelection`	| *Boolean*		| `true`		| Deny text selection in clickable elements.
 `disableCtrl`	| *Boolean*		| `false`		| Deny the use of *Ctrl/Command* button.
 `disableShift`	| *Boolean*		| `false`		| Deny the use of *Shift* button.
-`onSelectionStart`	| *Function*		| *Empty function*		| This callback will be called after a click over an element, but before
 
 ## Callbacks
 
 With options you can pass also some callbacks:
 
 
-Callback name			| Type				| Default		| Description
----						| ---					| ---				| ---
-`onSelectionStart`	| *Function*		| *Empty function*		| This callback will be called after a click over an element, but before every other operations. It could use three parameters: `list` (that contains an *Array* with selected objects), `parent` (the target object), `element` (the clicked object). 
-`onSelectionEnd`	| *Function*		| *Empty function*		| This callback will be called at the end of the selection. It could use three parameters: `list` (that contains an *Array* with selected objects), `parent` (the target object), `element` (the clicked object). 
+Callback name			| Description
+---						| ---
+`onSelectionStart`	| This callback will be called after a click over an element, but before every other operations. It could use three parameters: `list` (that contains an *Array* with selected objects), `parent` (the target object), `element` (the clicked object). 
+`onSelectionEnd`	| This callback will be called at the end of the selection. It could use three parameters: `list` (that contains an *Array* with selected objects), `parent` (the target object), `element` (the clicked object). 
 
 ## Example
 
