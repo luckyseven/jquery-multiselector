@@ -27,7 +27,7 @@
 
                     var lastSelected = $(parent).children('.' + options.lastElementClass);
 
-                    if (lastSelected.length == 0)
+                    if (lastSelected.length === 0)
                         lastSelected = $(parent).children(options.selector);
 
                     if (lastSelected.length > 0 && e.shiftKey && !options.disableShift)
@@ -52,8 +52,40 @@
                         $(parent).children(options.selector).not(this).removeClass(options.selectedElementClass);
 
                     }
+
                     $(this).toggleClass(options.selectedElementClass);
                     $(this).toggleClass(options.lastElementClass, $(this).hasClass(options.selectedElementClass));
+
+                    if ($(parent).children('.' + options.lastElementClass).length === 0)
+                    {
+                        var nextSelected = $(this).next();
+                        var nextFound = false;
+                        while(nextSelected.length > 0)
+                        {
+                            if ($(nextSelected[0]).hasClass(options.selectedElementClass))
+                            {
+                                nextFound = true;
+                                $(nextSelected[0]).addClass(options.lastElementClass);
+                                break;
+                            }
+                            nextSelected = $(nextSelected[0]).next();
+                        }
+                        if ($(parent).children('.' + options.lastElementClass).length === 0)
+                        {
+                            var prevSelected = $(this).prev();
+                            var prevFound = false;
+                            while(prevSelected.length > 0)
+                            {
+                                if ($(prevSelected[0]).hasClass(options.selectedElementClass))
+                                {
+                                    prevFound = true;
+                                    $(prevSelected[0]).addClass(options.lastElementClass);
+                                    break;
+                                }
+                                prevSelected = $(prevSelected[0]).next();
+                            }
+                        }
+                    }
                     options.onSelectionEnd($(parent).children('.' + options.selectedElementClass), parent, this);
 
                 });
