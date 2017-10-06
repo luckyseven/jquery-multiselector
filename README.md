@@ -103,8 +103,7 @@ Callback name			| Description
 
 ## Example
 
-Open `example/index.html` in your browser to see jQuery MultiSelector Plugin in action.
-
+Open `example/index.html` in your browser to see jQuery MultiSelector Plugin in action or click [here](http://htmlpreview.github.io/?https://github.com/luckyseven/jquery-multiselector/blob/master/example/index.html).
 
 
 **Have you used this plugin in your project?**
