@@ -27,6 +27,9 @@
 
                     var lastSelected = $(parent).children('.' + options.lastElementClass);
 
+                    if (lastSelected.length == 0)
+                        lastSelected = $(parent).children(options.selector);
+
                     if (lastSelected.length > 0 && e.shiftKey && !options.disableShift)
                     {
                         var list        = $(parent).children(options.selector);
