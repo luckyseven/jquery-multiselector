@@ -23,7 +23,7 @@
 
                 $(this).on('click', options.selector, function(e) {
 
-                    options.onSelectionStart(getSelected(parent), parent, this);
+                    options.onSelectionStart(getSelected(parent), parent, this, e);
 
                     var lastSelected = $(parent).children('.' + options.lastElementClass);
 
@@ -39,7 +39,7 @@
                         $(parent).children('.ms-shifted').removeClass('ms-shifted').removeClass('ms-selected');
 
                         list.slice(Math.min(lastIndex, curIndex), Math.max(lastIndex, curIndex) + 1).addClass(options.selectedElementClass).addClass('ms-shifted');
-                        options.onSelectionEnd(getSelected(parent), parent, this);
+                        options.onSelectionEnd(getSelected(parent), parent, this, e);
                         return;
                     }
 
@@ -86,7 +86,7 @@
                             }
                         }
                     }
-                    options.onSelectionEnd($(parent).children('.' + options.selectedElementClass), parent, this);
+                    options.onSelectionEnd($(parent).children('.' + options.selectedElementClass), parent, this, e);
 
                 });
             })

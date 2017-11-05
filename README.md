@@ -98,8 +98,8 @@ With options you can pass also some callbacks:
 
 Callback name			| Description
 ---						| ---
-`onSelectionStart`	| This callback will be called after a click over an element, but before every other operations. It could use three parameters: `list` (that contains an *Array* with selected objects), `parent` (the target object), `element` (the clicked object). 
-`onSelectionEnd`	| This callback will be called at the end of the selection. It could use three parameters: `list` (that contains an *Array* with selected objects), `parent` (the target object), `element` (the clicked object). 
+`onSelectionStart`	| This callback will be called after a click over an element, but before every other operations. You can use up to four parameters: `list` (that contains an *Array* with selected objects), `parent` (the target object), `element` (the clicked object), `event` (the onClick event object). 
+`onSelectionEnd`	| This callback will be called at the end of the selection. You can use up to four parameters: `list` (that contains an *Array* with selected objects), `parent` (the target object), `element` (the clicked object), `event` (the onClick event object). 
 
 ## Example
 
