@@ -47,7 +47,7 @@
     {
         $("#test1, #test2").multiSelector({
             selector:'li',
-            onSelectionEnd: function(list, parent, element) //Callback
+            onSelectionEnd: function(list, parent, element, event) //Callback
             {
                 console.log("First parameter: object list");
                 console.log(list);
@@ -57,6 +57,9 @@
 
                 console.log("Third parameter: clicked object");
                 console.log(element);
+
+                console.log("Fourth parameter: onClick event object. Useful to check or alterate Ctrl/Command/Shift keys status (event.ctrlKey, event.metaKey, event.shiftKey)");
+                console.log(event);
             }
         });
     });
